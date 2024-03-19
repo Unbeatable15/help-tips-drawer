@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import HelpDrawer from './NormalDrawer'; // Assuming the file is named HelpDrawer.jsx
+import logo from './images/NCR_logo.jpeg';
+
 
 function App() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+      <img src={logo} alt='NCR logo'></img>
+      <HelpDrawer open={open} onClose={() => setOpen(false)}>
+        <p>This is some helpful content.</p>
+      </HelpDrawer>
     </div>
   );
 }
+
 
 export default App;
