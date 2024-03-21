@@ -10,7 +10,9 @@ function App() {
   return (
 
     <div>
-      <img src={logo} alt='NCR logo'></img>
+      <div className='logo'><img src={logo} alt='NCR logo'></img></div>
+
+      <input type='text'></input>
       <HelpDrawer open={open} onClose={() => setOpen(false)}>
         <p>This is some helpful content.</p>
       </HelpDrawer>
