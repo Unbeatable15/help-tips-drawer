@@ -7,16 +7,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import '../src/index.css';
 
-function HelpDrawer({ children, anchor = 'bottom' }) {
+const HelpDrawer = () => {
     const items = [
         { body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
         { body: 'This is the body text for item 2.' },
         { body: 'This is the body text for item 3.' },
-        { body: 'This is the body text for item 4.' },
-        { body: 'This is the body text for item 5.' },
-        { body: 'This is the body text for item 6.' },
-        { body: 'This is the body text for item 7.' },
-        { body: 'This is the body text for item 8.' },
     ];
 
     return (
@@ -27,10 +22,10 @@ function HelpDrawer({ children, anchor = 'bottom' }) {
                         {...bindHover(popupState)}
                         className="help-button"
                         sx={{
-                            '&:hover': { backgroundColor: '#5F259E' }, // Change hover background color
-                            '&:focus': { backgroundColor: '#5F259E' }, // Change focus background color
-                            backgroundColor: 'white', // Set background color to white
-                            color: '#5F259E', // Set icon color
+                            '&:hover': { backgroundColor: '#5F259E' },
+                            '&:focus': { backgroundColor: '#5F259E' },
+                            backgroundColor: 'white',
+                            color: '#5F259E',
                         }}
                     >
                         <HelpIcon />
@@ -45,21 +40,15 @@ function HelpDrawer({ children, anchor = 'bottom' }) {
                             vertical: 'bottom',
                             horizontal: 'right',
                         }}
-                        sx={{
-                            '& .MuiPopover-paper': {
-                                backgroundColor: '#5F259E', // Customize the background color
-                                borderRadius: '16px', // Rounded corners
-                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Shadow for depth
-                                padding: '16px', // Add padding inside the popover
-                            },
-                        }}
-                        onMouseLeave={popupState.close} // Close the popover when the mouse leaves the popover area
+                        onMouseLeave={popupState.close}
+                        disableScrollLock={true}
+                        style={{ pointerEvents: 'none' }}
                     >
-                        <Box className="drawer-container" sx={{ padding: '16px', backgroundColor: '#5F259E' }}>
-                            <Typography variant="h6" className="drawer-title" sx={{ marginBottom: '16px', color: '#FFFFFF' }}>Helps and Tips</Typography>
-                            <Box className="flex-container" style={{ flexDirection: 'column' }} sx={{ gap: '16px' }}>
+                        <Box className="drawer-container" style={{ pointerEvents: 'auto' }}>
+                            <Typography variant="h6" className="drawer-title">Helps and Tips</Typography>
+                            <Box className="flex-container" style={{ flexDirection: 'column' }}>
                                 {items.map((item, index) => (
-                                    <Box key={index} className="flex-item" sx={{ padding: '8px', borderRadius: '4px', backgroundColor: '#7A35B9', color: '#FFFFFF', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', transition: '0.3s' }}>
+                                    <Box key={index} className="flex-item">
                                         <Typography variant="body1">
                                             {item.body}
                                         </Typography>

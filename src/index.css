@@ -53,6 +53,7 @@ code {
 
 .flex-container {
   display: flex;
+  height: 200px;
   overflow-x: auto;
   gap: 16px;
   justify-content: space-around;
@@ -113,6 +114,50 @@ code {
   background-color: #28387c; /* Darker blue on hover */
  }
  
+ /* app.css */
+
+.help-button {
+  background-color: white;
+  color: #5F259E;
+}
+
+.help-button:hover,
+.help-button:focus {
+  background-color: lightgray;
+  color: lightgray; /* Ensure the icon color remains unchanged on hover */
+}
+
+/* .MuiPopover-paper {
+  background-color: #5F259E;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+} */
+
+.drawer-container {
+  padding: 16px;
+  background-color: #5F259E;
+}
+
+.drawer-title {
+  margin-bottom: 16px;
+  color: #FFFFFF;
+}
+
+.flex-container {
+
+  gap: 16px;
+}
+
+.flex-item {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
  
 
 
